@@ -1,0 +1,13 @@
+import random
+
+alfabeto_maiusculo = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alfabeto_minusculo = 'abcdefghijklmnopqrstuvwxyz'
+simbolos_especiais = '!@#$%^&*()-=_+[]{,}|;:.<>?/'
+
+carac = int(input('Quantos caracteres você deseja na sua senha? '))
+senha = ''
+
+for i in range(carac):
+    caractere = random.choice(alfabeto_maiusculo + alfabeto_minusculo + simbolos_especiais)
+    senha += caractere
+print(f'A senha gerada é {senha}')
