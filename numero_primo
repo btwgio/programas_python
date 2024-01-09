@@ -1,0 +1,20 @@
+'''Dado um número inteiro n, encontre o menor número primo maior do que n.
+Input
+A entrada é composta de uma única linha, contendo um número inteiro n (1 ≤ n ≤ 106).
+Output
+Seu programa deve mostrar um número inteiro p, que é o menor número primo maior do que n.'''
+
+def primo(numero):
+    if numero < 2:
+        return False
+    for i in range(2, int(numero**0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+ 
+teste = int(input())
+e_ver = False
+while e_ver != True:
+    teste += 1
+    e_ver = primo(teste)
+print(teste)
