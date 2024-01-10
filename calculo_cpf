@@ -1,0 +1,29 @@
+cpf = input('Informe o seu CPF: ').replace('.', '').replace('-', '')
+dgt = 0
+dgt2 = 0
+check = 0
+check2 = 0
+
+if len(cpf) == 11:
+    if cpf.isdigit():
+        check = int(cpf[9:10])
+        check2 = int(cpf[10:11])
+        
+        for i in range(1, 10):
+            dgt += int(cpf[i - 1: i]) * i
+        dgt = dgt % 11
+        if dgt == 10:
+            dgt = 0
+
+        for i in range(2, 11):
+            dgt2 += int(cpf[i - 1: i]) * (i - 1)
+        dgt2 = dgt2 % 11
+        if dgt2 == 10:
+            dgt2 = 0
+
+        if dgt == check and dgt2 == check2:
+            print('CPF válido.')
+        else:
+            print('CPF inválido.')
+else:
+    cpf = input('CPF inválido. Tente novamente: ').replace('.', '').replace('-', '')
