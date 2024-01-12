@@ -1,0 +1,21 @@
+material = float(input('informe a massa do material: '))
+material_inicial = material
+segundos = 0
+final = 0.5
+
+while material >= 0.5:
+    material = material / 2
+    segundos += 50
+    material_final = material
+
+
+horas = segundos // 3600
+minutos = (segundos % 3600) // 60
+segundos = (segundos % 3600) % 60
+
+print(f"Tempo de decaimento: {horas:02d}:{minutos:02d}:{segundos:02d}")
+
+
+print(f'massa inicial: {material_inicial} gramas')
+print(f'massa final: {material_final} gramas')
+print(f'tempo final: {horas:02d}:{minutos:02d}:{segundos:02d}')
