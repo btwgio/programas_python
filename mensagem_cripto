@@ -1,0 +1,13 @@
+mensagem = input('informe a mensagem: ').replace(' ', '').lower()
+chave = input('informe a palavra-chave: ').replace(' ', '').lower().zfill(len(mensagem))
+key = 9
+cripto = ''
+
+for letra in mensagem:
+    letra_asc = ord(letra) + key
+    letra_cripto = chr(letra_asc)
+    cripto += letra_cripto
+
+print(f'Mensagem original: {mensagem}')
+print(f'Palavra-chave: {chave}')
+print(f'Mensagem criptografada: {cripto}')
